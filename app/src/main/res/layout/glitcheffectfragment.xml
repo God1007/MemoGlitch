@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A">
+
+    <!-- 故障文字 - 扭曲效果 -->
+    <TextView
+        android:id="@+id/glitchText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="▒ ▒ ▒ SYSTEM ERROR ▒ ▒ ▒"
+        android:textSize="24sp"
+        android:textColor="#FF4444"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 闪烁背景容器 -->
+    <FrameLayout
+        android:id="@+id/glitchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="80dp"
+        android:background="#1A1F3A"
+        app:layout_constraintTop_toBottomOf="@id/glitchText"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/distortedMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Is that real you are？\nI remember... but you did not say that..."
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:padding="16dp"
+            android:lineSpacingExtra="8dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <!-- 进度指示器 -->
+    <ProgressBar
+        android:id="@+id/glitchProgress"
+        android:layout_width="200dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="60dp"
+        android:background="#333333"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progress="65"
+        android:progressDrawable="@drawable/glitch_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/glitchContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

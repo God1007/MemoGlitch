@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主要颜色 -->
+    <color name="primary_blue">#1E3A8A</color>
+    <color name="primary_blue_light">#93C5FD</color>
+    <color name="primary_blue_dark">#1E40AF</color>
+
+    <!-- 灰度颜色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="gray_50">#F8FAFC</color>
+    <color name="gray_100">#F3F4F6</color>
+    <color name="gray_200">#E5E7EB</color>
+    <color name="gray_300">#D1D5DB</color>
+    <color name="gray_400">#9CA3AF</color>
+    <color name="gray_600">#4B5563</color>
+    <color name="gray_700">#374151</color>
+    <color name="gray_900">#111827</color>
+
+    <!-- 文字颜色 -->
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_tertiary">#9CA3AF</color>
+
+    <!-- 故障效果颜色 -->
+    <color name="glitch_color_1">#0F172A</color>
+    <color name="glitch_color_2">#1A1F3A</color>
+    <color name="glitch_color_3">#243862</color>
+    <color name="glitch_bg_dark">#0F172A</color>
+    <color name="glitch_bg_darker">#060E27</color>
+    <color name="glitch_red">#FF4444</color>
+    <color name="glitch_red_light">#FF6B6B</color>
+    <color name="glitch_green">#00FF00</color>
+
+    <!-- 功能颜色 -->
+    <color name="error_red">#EF4444</color>
+    <color name="success_green">#10B981</color>
+
+    <!-- 骨架屏颜色 -->
+    <color name="skeleton_light">#E5E7EB</color>
+    <color name="skeleton_dark">#D1D5DB</color>
+
+    <!-- 背景颜色 -->
+    <color name="bg_primary">#FFFFFF</color>
+    <color name="bg_secondary">#F0F2F5</color>
+    <color name="bg_tertiary">#F8FAFC</color>
+</resources>

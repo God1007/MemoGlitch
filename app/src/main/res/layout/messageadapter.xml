@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="8dp">
+
+    <!-- 用户消息 -->
+    <FrameLayout
+        android:id="@+id/userMessageFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="#1E3A8A">
+
+            <TextView
+                android:id="@+id/userMessageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="280dp"
+                android:text="User Messages"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:padding="12dp" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <!-- AI消息 -->
+    <FrameLayout
+        android:id="@+id/aiMessageFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="#E5E7EB">
+
+            <TextView
+                android:id="@+id/aiMessageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="280dp"
+                android:text="Echo's response..."
+                android:textColor="#1F2937"
+                android:textSize="14sp"
+                android:padding="12dp" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</LinearLayout>
