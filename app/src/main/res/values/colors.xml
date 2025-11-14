@@ -30,6 +30,8 @@
     <color name="glitch_red">#FF4444</color>
     <color name="glitch_red_light">#FF6B6B</color>
     <color name="glitch_green">#00FF00</color>
+    <color name="glitchAccent">#FF6B6B</color>
+    <color name="deepText">#1F2937</color>
 
     <!-- 功能颜色 -->
     <color name="error_red">#EF4444</color>

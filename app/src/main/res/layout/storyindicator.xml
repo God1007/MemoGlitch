@@ -16,12 +16,14 @@
         android:orientation="vertical">
 
         <View
+            android:id="@+id/stageNormalCircle"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginBottom="4dp"
             android:background="@drawable/stage_circle_active" />
 
         <TextView
+            android:id="@+id/stageNormalLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NORMAL"
@@ -45,12 +47,14 @@
         android:orientation="vertical">
 
         <View
+            android:id="@+id/stageGlitchCircle"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginBottom="4dp"
             android:background="@drawable/stage_circle_current" />
 
         <TextView
+            android:id="@+id/stageGlitchLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ERROR"
@@ -74,12 +78,14 @@
         android:orientation="vertical">
 
         <View
+            android:id="@+id/stageRevealCircle"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginBottom="4dp"
             android:background="@drawable/stage_circle_inactive" />
 
         <TextView
+            android:id="@+id/stageRevealLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="REVEAL"
