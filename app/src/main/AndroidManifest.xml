@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MemoGlitch">
         <activity
+            android:name="com.example.memoglitch.ui.settings.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MemoGlitch" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
