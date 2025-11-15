@@ -16,6 +16,7 @@ public class ConversationEngine {
     private final MemorySystem memorySystem;
     private final EmotionCurve emotionCurve;
     private final GlitchEffect glitchEffect;
+    private final NarrativeScript narrativeScript;
     private final DialogueSystem dialogueSystem;
     private final ConversationStateStore stateStore;
 
@@ -25,7 +26,8 @@ public class ConversationEngine {
         memorySystem = new MemorySystem();
         emotionCurve = new EmotionCurve();
         glitchEffect = new GlitchEffect();
-        dialogueSystem = new DialogueSystem(storyManager, memorySystem, emotionCurve, glitchEffect);
+        narrativeScript = new NarrativeScript();
+        dialogueSystem = new DialogueSystem(storyManager, memorySystem, emotionCurve, glitchEffect, narrativeScript);
         stateStore = new ConversationStateStore();
     }
 
@@ -64,6 +66,11 @@ public class ConversationEngine {
     @NonNull
     public DialogueSystem getDialogueSystem() {
         return dialogueSystem;
+    }
+
+    @NonNull
+    public NarrativeScript getNarrativeScript() {
+        return narrativeScript;
     }
 
     @NonNull

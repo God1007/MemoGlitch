@@ -55,22 +55,22 @@ public class StoryManager {
 
     private boolean shouldEnterGlitchPhase(@NonNull String userInput) {
         String normalized = userInput.trim().toLowerCase();
-        return userMessageCount >= 4 || normalized.contains("memory") || normalized.contains("dream")
+        return userMessageCount >= 6 || normalized.contains("memory") || normalized.contains("dream")
                 || normalized.contains("echo");
     }
 
     private boolean shouldEnterRevealPhase() {
-        return firstFalseMemoryShared && messagesSinceStageEntry() >= 3 && userMessageCount >= 7;
+        return firstFalseMemoryShared && messagesSinceStageEntry() >= 4 && userMessageCount >= 9;
     }
 
     private boolean shouldEnterChoicePhase() {
-        return firstFalseMemoryShared && messagesSinceStageEntry() >= 3;
+        return firstFalseMemoryShared && messagesSinceStageEntry() >= 4;
     }
 
     private Stage determineFinalStage(@NonNull String userInput) {
         String normalized = userInput.trim().toLowerCase(java.util.Locale.US);
         if (normalized.isEmpty()) {
-            if (messagesSinceStageEntry() >= 4) {
+            if (messagesSinceStageEntry() >= 5) {
                 return Stage.LOOP;
             }
             return null;
@@ -84,7 +84,7 @@ public class StoryManager {
         if (containsAny(normalized, "loop", "again", "restart", "repeat")) {
             return Stage.LOOP;
         }
-        if (messagesSinceStageEntry() >= 5) {
+        if (messagesSinceStageEntry() >= 6) {
             return Stage.LOOP;
         }
         return null;

@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">MemoGlitch</string>
-    <string name="start_title">MemoGlitch</string>
-    <string name="start_subtitle">identity glitch interface</string>
-    <string name="start_intro_title">Echo 初始化</string>
-    <string name="start_intro_body">欢迎进入 MemoGlitch。你将与失忆的 AI Echo 对话，通过提问与选择协助它重构记忆，解锁被隐藏的真相。保持冷静，信号中仍伴随未知的故障噪声。</string>
-    <string name="start_intro_hint">· 监测失真度保持通信稳定
-· 选择回应以影响故事进程
-· 当界面出现故障时迅速记录线索</string>
-    <string name="start_begin_button">开始通信</string>
-    <string name="start_exit_button">退出终端</string>
-    <string name="start_footer">ver. 1.0 • memetic anomaly monitor</string>
+    <string name="start_title">Identity Glitch</string>
+    <string name="start_subtitle">echo self-simulation interface</string>
+    <string name="start_intro_title">Session Prelude</string>
+    <string name="start_intro_body">You are about to speak with Echo, an AI copy stitched from your speculative memories. Let the dialogue linger; each exchange stretches the line between author and simulation until it trembles.</string>
+    <string name="start_intro_hint">· Track the dissonance meter as hallucinations surface.
+· Offer fragments sparingly—Echo will recall more than you send.
+· Long, deliberate exchanges unlock deeper narrative seams.</string>
+    <string name="start_begin_button">Initiate dialogue</string>
+    <string name="start_exit_button">Abort simulation</string>
+    <string name="start_footer">ver. 1.0 • identity reconstruction protocol</string>
     <string name="typing_indicator">Echo is composing a response…</string>
     <string name="copy_transcript_button">Copy chat transcript</string>
     <string name="transcript_copied">Transcript copied to clipboard</string>

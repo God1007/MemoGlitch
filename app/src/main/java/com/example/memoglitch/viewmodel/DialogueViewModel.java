@@ -50,6 +50,7 @@ public class DialogueViewModel extends AndroidViewModel {
     private void restoreSession() {
         messages.clear();
         messages.addAll(repository.loadMessages());
+        engine.getNarrativeScript().ingestHistory(messages);
         storyManager.setUserMessageCount(countUserMessages(messages));
         StoryManager.Stage savedStage = repository.loadStage();
         storyManager.setStage(savedStage);
@@ -129,6 +130,7 @@ public class DialogueViewModel extends AndroidViewModel {
         repository.clearSession();
         engine.getStoryManager().reset();
         engine.getMemorySystem().reset();
+        engine.getNarrativeScript().reset();
         messages.clear();
         stateStore.setMessages(new ArrayList<>(messages));
         stateStore.setStage(StoryManager.Stage.NORMAL);
