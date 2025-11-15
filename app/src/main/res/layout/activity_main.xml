@@ -82,9 +82,24 @@
         android:paddingVertical="12dp"
         android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/dissonanceBar"
-        app:layout_constraintBottom_toTopOf="@id/inputContainer"
+        app:layout_constraintBottom_toTopOf="@id/typingIndicator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/typingIndicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_horizontal"
+        android:text="@string/typing_indicator"
+        android:textColor="#6B7280"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@id/inputContainer"
+        app:layout_constraintEnd_toEndOf="@id/inputContainer"
+        app:layout_constraintBottom_toTopOf="@id/inputContainer" />
 
     <!-- 输入框容器 -->
     <LinearLayout

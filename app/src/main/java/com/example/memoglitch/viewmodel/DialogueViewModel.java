@@ -17,8 +17,11 @@ import com.example.memoglitch.model.GlitchEffect;
 import com.example.memoglitch.model.Message;
 import com.example.memoglitch.model.StoryManager;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Primary ViewModel that sends and receives dialogue messages.
@@ -141,5 +144,38 @@ public class DialogueViewModel extends AndroidViewModel {
         int level = Math.min(100, storyManager.getUserMessageCount() * 15
                 + storyManager.getCurrentStage().ordinal() * 25);
         stateStore.setDissonance(level);
+    }
+
+    @NonNull
+    public String buildTranscript() {
+        if (messages.isEmpty()) {
+            return "";
+        }
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < messages.size(); i++) {
+            Message message = messages.get(i);
+            builder.append(senderLabel(message.getSender()))
+                    .append(" [")
+                    .append(format.format(new Date(message.getTimestamp())))
+                    .append("] ")
+                    .append(stageLabel(message.getStageAtSend()))
+                    .append(':')
+                    .append('\n')
+                    .append(message.getText().trim());
+            if (i < messages.size() - 1) {
+                builder.append("\n\n");
+            }
+        }
+        return builder.toString();
+    }
+
+    private String senderLabel(@NonNull Message.Sender sender) {
+        return sender == Message.Sender.USER ? "You" : "Echo";
+    }
+
+    private String stageLabel(@NonNull StoryManager.Stage stage) {
+        String lower = stage.name().toLowerCase(Locale.US);
+        return Character.toUpperCase(lower.charAt(0)) + lower.substring(1);
     }
 }
