@@ -34,7 +34,31 @@ public class GlitchEffect {
         if (stage == StoryManager.Stage.NORMAL) {
             return new GlitchState(false, baseText);
         }
-        boolean trigger = random.nextFloat() < (stage == StoryManager.Stage.GLITCH ? 0.35f : 0.55f);
+        float triggerChance;
+        switch (stage) {
+            case GLITCH:
+                triggerChance = 0.35f;
+                break;
+            case REVEAL:
+                triggerChance = 0.55f;
+                break;
+            case CHOICE:
+                triggerChance = 0.45f;
+                break;
+            case CLOSURE:
+                triggerChance = 0.20f;
+                break;
+            case ERASURE:
+                triggerChance = 0.65f;
+                break;
+            case LOOP:
+                triggerChance = 0.5f;
+                break;
+            default:
+                triggerChance = 0.3f;
+                break;
+        }
+        boolean trigger = random.nextFloat() < triggerChance;
         if (!trigger) {
             return new GlitchState(false, baseText);
         }

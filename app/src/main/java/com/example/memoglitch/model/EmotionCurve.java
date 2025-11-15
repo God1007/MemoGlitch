@@ -35,6 +35,14 @@ public class EmotionCurve {
                 return new EmotionState(700L, "DISSONANT");
             case REVEAL:
                 return new EmotionState(900L, "OMNISCIENT");
+            case CHOICE:
+                return new EmotionState(820L, "INSISTENT");
+            case CLOSURE:
+                return new EmotionState(650L, "RESOLVED");
+            case ERASURE:
+                return new EmotionState(1000L, "FRAYED");
+            case LOOP:
+                return new EmotionState(780L, "RECURSIVE");
             default:
                 return new EmotionState(500L, "CALM");
         }
