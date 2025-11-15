@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
         sendButton = findViewById(R.id.sendButton);
         headerSubtitle = findViewById(R.id.headerSubtitle);
         ImageButton settingsButton = findViewById(R.id.settingsButton);
+        Button restartButton = findViewById(R.id.restartButton);
+        Button backToStartButton = findViewById(R.id.backToStartButton);
         typingIndicator = findViewById(R.id.typingIndicator);
 
         View storyIndicator = findViewById(R.id.storyIndicator);
@@ -109,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(messageAdapter);
 
         sendButton.setOnClickListener(v -> {
-            performHaptics();
+            performHaptics(v);
             String message = userInput.getText().toString();
             dialogueViewModel.sendUserMessage(message);
             userInput.setText("");
@@ -127,6 +130,20 @@ public class MainActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(v -> {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
+        });
+
+        restartButton.setOnClickListener(v -> {
+            performHaptics(v);
+            sessionViewModel.resetConversation(dialogueViewModel);
+            Toast.makeText(this, R.string.session_reset_toast, Toast.LENGTH_SHORT).show();
+        });
+
+        backToStartButton.setOnClickListener(v -> {
+            performHaptics(v);
+            Intent intent = new Intent(this, StartActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
         });
 
         dialogueViewModel.getMessagesLiveData().observe(this, messages -> {
@@ -231,9 +248,9 @@ public class MainActivity extends AppCompatActivity {
         label.setTextColor(ContextCompat.getColor(this, textColor));
     }
 
-    private void performHaptics() {
-        if (vibrationEnabled) {
-            sendButton.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+    private void performHaptics(View view) {
+        if (vibrationEnabled && view != null) {
+            view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         }
     }
 }
