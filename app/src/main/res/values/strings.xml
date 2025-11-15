@@ -10,4 +10,8 @@
     <string name="start_begin_button">开始通信</string>
     <string name="start_exit_button">退出终端</string>
     <string name="start_footer">ver. 1.0 • memetic anomaly monitor</string>
+    <string name="typing_indicator">Echo is composing a response…</string>
+    <string name="copy_transcript_button">Copy chat transcript</string>
+    <string name="transcript_copied">Transcript copied to clipboard</string>
+    <string name="transcript_empty">No messages yet to export</string>
 </resources>

@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText userInput;
     private Button sendButton;
     private TextView headerSubtitle;
+    private TextView typingIndicator;
     private View normalCircle;
     private View glitchCircle;
     private View revealCircle;
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         sendButton = findViewById(R.id.sendButton);
         headerSubtitle = findViewById(R.id.headerSubtitle);
         ImageButton settingsButton = findViewById(R.id.settingsButton);
+        typingIndicator = findViewById(R.id.typingIndicator);
 
         View storyIndicator = findViewById(R.id.storyIndicator);
         normalCircle = storyIndicator.findViewById(R.id.stageNormalCircle);
@@ -176,6 +178,16 @@ public class MainActivity extends AppCompatActivity {
                 sendButton.setEnabled(!typing);
                 sendButton.setAlpha(typing ? 0.5f : 1f);
                 sendButton.setText(typing ? "…" : "→");
+                if (typing) {
+                    typingIndicator.setVisibility(View.VISIBLE);
+                    typingIndicator.setAlpha(0f);
+                    typingIndicator.animate().alpha(1f).setDuration(150).start();
+                } else if (typingIndicator.getVisibility() == View.VISIBLE) {
+                    typingIndicator.animate().alpha(0f).setDuration(150)
+                            .withEndAction(() -> typingIndicator.setVisibility(View.GONE)).start();
+                } else {
+                    typingIndicator.setVisibility(View.GONE);
+                }
             }
         });
 

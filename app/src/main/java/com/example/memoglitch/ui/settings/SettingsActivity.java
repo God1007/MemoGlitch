@@ -1,10 +1,13 @@
 package com.example.memoglitch.ui.settings;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
         SeekBar textSizeSeekBar = findViewById(R.id.textSizeSeekBar);
         ToggleButton vibrationToggle = findViewById(R.id.vibrationToggle);
         Button resetButton = findViewById(R.id.resetButton);
+        Button exportButton = findViewById(R.id.exportButton);
 
         if (header != null) {
             header.setOnClickListener(v -> finish());
@@ -73,6 +77,20 @@ public class SettingsActivity extends AppCompatActivity {
 
         vibrationToggle.setOnCheckedChangeListener((buttonView, isChecked) ->
                 sessionViewModel.updateVibrationEnabled(isChecked));
+
+        exportButton.setOnClickListener(v -> {
+            String transcript = dialogueViewModel.buildTranscript();
+            if (transcript.isEmpty()) {
+                Toast.makeText(this, R.string.transcript_empty, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            if (clipboard != null) {
+                ClipData clip = ClipData.newPlainText("MemoGlitch Transcript", transcript);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(this, R.string.transcript_copied, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         resetButton.setOnClickListener(v -> {
             sessionViewModel.resetConversation(dialogueViewModel);
