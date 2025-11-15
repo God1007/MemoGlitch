@@ -50,9 +50,9 @@ public class DialogueViewModel extends AndroidViewModel {
     private void restoreSession() {
         messages.clear();
         messages.addAll(repository.loadMessages());
+        storyManager.setUserMessageCount(countUserMessages(messages));
         StoryManager.Stage savedStage = repository.loadStage();
         storyManager.setStage(savedStage);
-        storyManager.setUserMessageCount(countUserMessages(messages));
         storyManager.setFirstFalseMemoryShared(repository.wasFalseMemoryShared());
         stateStore.setMessages(new ArrayList<>(messages));
         stateStore.setStage(savedStage);

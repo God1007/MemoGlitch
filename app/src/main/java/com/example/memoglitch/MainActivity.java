@@ -228,6 +228,10 @@ public class MainActivity extends AppCompatActivity {
                 applyStageHighlight(glitchCircle, glitchLabel, R.drawable.stage_circle_current, R.color.glitchAccent);
                 break;
             case REVEAL:
+            case CHOICE:
+            case CLOSURE:
+            case ERASURE:
+            case LOOP:
                 applyStageHighlight(revealCircle, revealLabel, R.drawable.stage_circle_current, R.color.gray_600);
                 break;
         }

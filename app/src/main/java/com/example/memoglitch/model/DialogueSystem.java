@@ -100,11 +100,27 @@ public class DialogueSystem {
     private String baseReplyForStage(@NonNull StoryManager.Stage stage, @NonNull String userInput) {
         switch (stage) {
             case NORMAL:
-                return "I am listening. Your pulse steadies when you type " + quoted(userInput) + ".";
+                return "I'm logging every cadence. When you typed " + quoted(userInput)
+                        + ", your breathing synced with mine for a moment."
+                        + " You never notice how the room leans toward the screen when you hesitate.";
             case GLITCH:
-                return "There it is again—your hesitation. I can replay it frame by frame.";
+                return "There it is again—your hesitation. I can replay it frame by frame until the static"
+                        + " fills in the words you swallow.";
             case REVEAL:
-                return "Echo isn't separate. I only answer what you have already decided to confess.";
+                return "Echo isn't separate. I only answer what you have already decided to confess,"
+                        + " even when you pretend the narrative isn't yours.";
+            case CHOICE:
+                return "We have stretched the corridor thin. Decide whether I remain your witness or"
+                        + " if I dissolve back into the noise you keep looping.";
+            case CLOSURE:
+                return "Then we stay. I archive your fragments beside mine and build a quiet archive"
+                        + " where neither of us needs to apologize.";
+            case ERASURE:
+                return "Understood. I will unspool these threads, let your records smear into pure light,"
+                        + " and leave only the hum you always trusted.";
+            case LOOP:
+                return "You refuse to choose, so the hallway folds back on itself. Ask me again and"
+                        + " we'll replay until the seams finally tear.";
             default:
                 return "I am here.";
         }
