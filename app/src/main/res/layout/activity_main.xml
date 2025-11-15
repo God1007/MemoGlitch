@@ -39,6 +39,38 @@
             app:layout_constraintTop_toBottomOf="@id/headerTitle"
             app:layout_constraintBottom_toBottomOf="parent" />
 
+        <Button
+            android:id="@+id/backToStartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/outline_button_selector"
+            android:minWidth="0dp"
+            android:paddingHorizontal="14dp"
+            android:text="@string/back_to_start"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_blue"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/restartButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/restartButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/reset_button_bg"
+            android:minWidth="0dp"
+            android:paddingHorizontal="14dp"
+            android:text="@string/restart_session"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/settingsButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageButton
             android:id="@+id/settingsButton"
             android:layout_width="36dp"

@@ -14,4 +14,7 @@
     <string name="copy_transcript_button">Copy chat transcript</string>
     <string name="transcript_copied">Transcript copied to clipboard</string>
     <string name="transcript_empty">No messages yet to export</string>
+    <string name="restart_session">重新开始</string>
+    <string name="back_to_start">返回首页</string>
+    <string name="session_reset_toast">会话已重置，你可以重新开始。</string>
 </resources>
