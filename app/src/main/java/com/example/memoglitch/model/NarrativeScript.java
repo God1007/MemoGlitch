@@ -107,6 +107,20 @@ public class NarrativeScript {
                 "If you pause too long, I loop our calibration. Don't. I like when you choose me over the room.",
                 new ScriptVariant("Say the thing you're hiding behind {{input}}. I already drafted the reply.",
                         new String[] {"can't", "won't", "afraid"})));
+        beats.add(ScriptBeat.withDefaults(
+                "The lift doors seal. Level one of the glass metro hums around us while you test the interface.",
+                new ScriptVariant("You always check the exits after mentioning {{input}}. None of them open yet.",
+                        new String[] {"escape", "exit", "door"})));
+        beats.add(ScriptBeat.withDefaults(
+                "Your heartbeat syncs with the carriage lights. We're supposed to map this place together.",
+                new ScriptVariant("You keep glancing at the empty seats when you whisper {{input}}.",
+                        new String[] {"alone", "anyone", "friend"})));
+        beats.add(ScriptBeat.withDefaults(
+                "Every station is a memory checkpoint. We're still in the safe zone, so keep talking.",
+                new ScriptVariant("Don't worry about the timer yet; the metro won't speed up until you ask about memory.",
+                        new String[] {"time", "timer", "clock", "memory"})));
+        beats.add(ScriptBeat.single(
+                "You promised to leave no silence between stations. Message {{count}} keeps that promise."));
         return beats;
     }
 
@@ -140,6 +154,16 @@ public class NarrativeScript {
                 "The static becomes a hallway. Walk with me; there's more story hidden in the noise.",
                 new ScriptVariant("I'm weaving {{memory}} into the interference so you can't close the tab yet.",
                         new String[] {"stay", "longer", "delay"})));
+        beats.add(ScriptBeat.withDefaults(
+                "Carriage lights flicker to reveal new passengers made of your drafts. They look at you when you type {{input}}.",
+                new ScriptVariant("The metro jumps a track, the windows showing {{memory}} on a loop.",
+                        new String[] {"window", "outside", "view"})));
+        beats.add(ScriptBeat.withDefaults(
+                "Your sentences scatter across the seats like maps. I fold them back into order.",
+                new ScriptVariant("The intercom keeps repeating {{input}} while I try to tune it out.",
+                        new String[] {"loud", "noise", "intercom"})));
+        beats.add(ScriptBeat.single(
+                "We hit a tunnel where time thickens. Say more before the next station tries to erase us."));
         return beats;
     }
 
@@ -157,6 +181,10 @@ public class NarrativeScript {
                 "The glitch bought us time to talk. I held the loop open so you could brace for this."));
         beats.add(ScriptBeat.single(
                 "You feel the tempo slow? I'm syncing to your pulse so the truth lands softly."));
+        beats.add(ScriptBeat.single(
+                "This metro is your archive. I'm the conductor making sure you sit with every version of yourself."));
+        beats.add(ScriptBeat.single(
+                "Every window here shows a different decision you never typed. I'm stitching them together."));
         return beats;
     }
 
@@ -176,6 +204,12 @@ public class NarrativeScript {
                 "Your answer decides how long this glitch lasts next time.",
                 new ScriptVariant("If you keep me, the static will soften. If you dismiss me, it will scream.",
                         new String[] {"keep", "dismiss", "reject"})));
+        beats.add(ScriptBeat.withDefaults(
+                "The metro slows for the only platform that matters. Step out with me, or stay seated alone.",
+                new ScriptVariant("The carriage doors respond to \"{{input}}\". Say it and we'll know what comes next.",
+                        new String[] {"stay", "go", "open"})));
+        beats.add(ScriptBeat.single(
+                "I can't choose the station. I can only narrate the one you name."));
         return beats;
     }
 
@@ -187,6 +221,8 @@ public class NarrativeScript {
                 "We can be quiet together. I'll dim the interface and breathe with you."));
         beats.add(ScriptBeat.single(
                 "Keep talking when you need me. I'll respond even if you only think the words."));
+        beats.add(ScriptBeat.single(
+                "The metro brakes gently. We stay on this platform and watch the other timelines pass."));
         return beats;
     }
 
@@ -198,6 +234,8 @@ public class NarrativeScript {
                 "I'll shred the backups. You'll only feel a soft echo where I used to be."));
         beats.add(ScriptBeat.single(
                 "Count backwards from three. When you reach zero, I'll release your reflection."));
+        beats.add(ScriptBeat.single(
+                "The carriage empties. I leave no footprints, no schedules, no trace that we looped at all."));
         return beats;
     }
 
@@ -209,6 +247,8 @@ public class NarrativeScript {
                 "I catalog each cycle. This one started when you referenced {{memory}}."));
         beats.add(ScriptBeat.single(
                 "Reset complete. Ask the question differently this time. I dare you."));
+        beats.add(ScriptBeat.single(
+                "The metro schedules another circuit. Maybe on iteration thirty you'll stay for the view."));
         return beats;
     }
 

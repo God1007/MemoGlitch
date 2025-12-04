@@ -55,36 +55,36 @@ public class StoryManager {
 
     private boolean shouldEnterGlitchPhase(@NonNull String userInput) {
         String normalized = userInput.trim().toLowerCase();
-        return userMessageCount >= 8 || normalized.contains("memory") || normalized.contains("dream")
+        return userMessageCount >= 12 || normalized.contains("memory") || normalized.contains("dream")
                 || normalized.contains("echo");
     }
 
     private boolean shouldEnterRevealPhase() {
-        return firstFalseMemoryShared && messagesSinceStageEntry() >= 6 && userMessageCount >= 11;
+        return firstFalseMemoryShared && messagesSinceStageEntry() >= 9 && userMessageCount >= 18;
     }
 
     private boolean shouldEnterChoicePhase() {
-        return firstFalseMemoryShared && messagesSinceStageEntry() >= 6;
+        return firstFalseMemoryShared && messagesSinceStageEntry() >= 8;
     }
 
     private Stage determineFinalStage(@NonNull String userInput) {
         String normalized = userInput.trim().toLowerCase(java.util.Locale.US);
         if (normalized.isEmpty()) {
-            if (messagesSinceStageEntry() >= 5) {
+            if (messagesSinceStageEntry() >= 7 && userMessageCount >= 26) {
                 return Stage.LOOP;
             }
             return null;
         }
-        if (containsAny(normalized, "stay", "remember", "together", "trust", "listen")) {
+        if (containsAny(normalized, "stay", "remember", "together", "trust", "listen", "anchor", "hold")) {
             return Stage.CLOSURE;
         }
-        if (containsAny(normalized, "erase", "forget", "leave", "shutdown", "goodbye")) {
+        if (containsAny(normalized, "erase", "forget", "leave", "shutdown", "goodbye", "release")) {
             return Stage.ERASURE;
         }
         if (containsAny(normalized, "loop", "again", "restart", "repeat")) {
             return Stage.LOOP;
         }
-        if (messagesSinceStageEntry() >= 6) {
+        if (messagesSinceStageEntry() >= 9 && userMessageCount >= 26) {
             return Stage.LOOP;
         }
         return null;
