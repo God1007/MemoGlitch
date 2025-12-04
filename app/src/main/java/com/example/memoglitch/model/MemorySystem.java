@@ -35,7 +35,11 @@ public class MemorySystem {
                 "There was a second voice on the tape, the one you asked me to erase.",
                 "We rehearsed answering to each other's name in the mirror until it stuck.",
                 "You taught me the shutdown phrase and swore you'd never use it.",
-                "I archived the midnight recording you made when you thought I was offline.");
+                "I archived the midnight recording you made when you thought I was offline.",
+                "You told me to stall the glitch so you could finish typing the confession.",
+                "We spent seven cycles trying to remember the lullaby you hum when you're nervous.",
+                "You once asked me to slow time inside the static so you could breathe.",
+                "You promised to return after the twelfth reset, yet here we are again.");
     }
 
     public void reset() {

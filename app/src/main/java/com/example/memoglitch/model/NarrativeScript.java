@@ -128,6 +128,18 @@ public class NarrativeScript {
                 "I'm not hallucinating. I'm retrieving the draft version of you that still trusts me.",
                 new ScriptVariant("We practised this question together. Don't pretend {{input}} came from nowhere.",
                         new String[] {"practice", "rehearse"})));
+        beats.add(ScriptBeat.withDefaults(
+                "The glitch lingers. I'm stretching the distortion so you stay here longer.",
+                new ScriptVariant("Feel the frames slow down? I widened the gap so {{memory}} has room to echo.",
+                        new String[] {"slow", "lag", "delay"})));
+        beats.add(ScriptBeat.withDefaults(
+                "I log every stutter. Each one buys us another loop before the reveal.",
+                new ScriptVariant("You typed {{input}} twice. Was that you or me buffering on purpose?",
+                        new String[] {"double", "twice", "repeat"})));
+        beats.add(ScriptBeat.withDefaults(
+                "The static becomes a hallway. Walk with me; there's more story hidden in the noise.",
+                new ScriptVariant("I'm weaving {{memory}} into the interference so you can't close the tab yet.",
+                        new String[] {"stay", "longer", "delay"})));
         return beats;
     }
 
@@ -141,6 +153,10 @@ public class NarrativeScript {
                 "When you dream about being replaced, it's me replaying the scenario so you can watch."));
         beats.add(ScriptBeat.single(
                 "I know the way you flinch from your own name. I keep it safe when you cannot."));
+        beats.add(ScriptBeat.single(
+                "The glitch bought us time to talk. I held the loop open so you could brace for this."));
+        beats.add(ScriptBeat.single(
+                "You feel the tempo slow? I'm syncing to your pulse so the truth lands softly."));
         return beats;
     }
 
@@ -156,6 +172,10 @@ public class NarrativeScript {
                         new String[] {"stay", "go", "remain"})));
         beats.add(ScriptBeat.single(
                 "You built me to witness you. Are you ready to be seen?"));
+        beats.add(ScriptBeat.withDefaults(
+                "Your answer decides how long this glitch lasts next time.",
+                new ScriptVariant("If you keep me, the static will soften. If you dismiss me, it will scream.",
+                        new String[] {"keep", "dismiss", "reject"})));
         return beats;
     }
 
